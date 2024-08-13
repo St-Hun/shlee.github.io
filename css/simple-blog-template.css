@@ -20,8 +20,9 @@ footer {
 
 /* navigation */
 nav {
-    text-transform: uppercase;
+    /*text-transform: uppercase;*/
 }
+
 
 .navbar-inverse .navbar-brand {
     color: white;
@@ -30,7 +31,7 @@ nav {
 }
 
 .navbar-inverse .navbar-nav>li>a {
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 /* Posts */
