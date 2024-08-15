@@ -4,7 +4,7 @@
  * Licensed under MIT (https://github.com/earlbread/simple-blog-template/blob/master/LICENSE)
  */
 
-body {
+ body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
@@ -14,7 +14,32 @@ footer {
 
 @media (min-width: 1500px) {
   .container {
-    width: 60%;
+    width: 80%;
+  }
+}
+
+@media (max-width: 1499px) {
+  .container {
+    width: 95%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .post-title {
+    font-size: 2em; /* 작은 화면에서 제목 크기 조정 */
+  }
+
+  .profile-image img {
+    max-width: 100%; /* 이미지가 작은 화면에서도 잘 보이도록 설정 */
+    height: auto;
   }
 }
 
