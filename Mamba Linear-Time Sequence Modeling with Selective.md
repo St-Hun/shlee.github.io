@@ -1,126 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+# Mamba: Linear-Time Sequence Modeling with Selective State Spaces
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Mamba Review</title>
-    <link rel="icon" href="favicon.png" type="image/png">
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link href="css/simple-blog-template.css" rel="stylesheet">
-
-    <!-- Marked.js for Markdown parsing -->
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-
-    <style>
-        /* 추가적인 스타일을 여기에 작성할 수 있습니다 */
-    </style>
-
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="index.html"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="index.html">About</a></li>
-                    <li><a href="blog.html" style="color: #06B968;">Blog</a></li>
-                    <li><a href="gitrepo.html">Sign up</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Page Content -->
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="post-title">Mamba: Linear-Time Sequence Modeling with Selective State Spaces</h1>
-                <hr>
-                <p><span class="glyphicon glyphicon-time"></span> Updated 2024-08-16 </p>
-                <hr>
-
-                <!-- Markdown Content -->
-                <div id="markdown-content">
-                    <!-- 이곳에 변환된 Markdown 내용이 삽입됩니다 -->
-                </div>
-
-                <hr>
-
-                <!-- Comments Section -->
-                <div class="well">
-                    <h4>Leave a Comment:</h4>
-                    <form role="form">
-                        <div class="form-group">
-                            <textarea class="form-control" rows="3"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
-                    </form>
-                </div>
-
-                <hr>
-
-                <!-- Posted Comments -->
-                <div class="media">
-                    <a class="pull-left" href="#">
-                        <img class="media-object" src="http://placehold.it/64x64" alt="">
-                    </a>
-                    <div class="media-body">
-                        <h4 class="media-heading">Start Bootstrap
-                            <small>August 25, 2014 at 9:30 PM</small>
-                        </h4>
-                        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Custom Script to Convert Markdown and Insert into HTML -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const markdownContent = `
+Paper url: https://arxiv.org/abs/2312.00752
+Read by: SH_Lee
+Date: 2024년 8월 8일
+Domain: NLP
+Tags: Mamba
 
 [HiPPO: Recurrent Memory with Optimal Polynomial Projections](https://arxiv.org/abs/2008.07669)
 
@@ -142,38 +26,38 @@
 - 매 Time Step마다 함수에 대해서 잘 근사화가 되었는지 확인해야함
 - 매 Time Step마다 **적절한 basis**들을 사용해서 **함수를 근사화**하려고 함
 
-<img src="mamba_review_img/Untitled.png" alt="HiPPO-1" width="1000">
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled.png)
 
 - ***적절한  Basis***
     
-    **Orthogonal Basis**
+    **⇒ Orthogonal Basis**
     
     - HiPPO에서 말하는 적절한 Basis는 Orthogonal basis이다. 아래에 간단한 예시를 들어서 설명하면
         
-        <img src="mamba_review_img/Untitled%201.png" alt="Orthogonal Basis" width="900">
+        ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%201.png)
         
 
 - ***잘 근사화가 되었는가?***
     
     ⇒ 수식적으로 원래 함수와 근사화된 함수 사이의 **Distance(거리)를 정의**해야함
     
-    <img src="mamba_review_img/f7797c9f-6b15-4512-9e1b-4ea0d74397c9.png" alt="distance" width="900">
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/f7797c9f-6b15-4512-9e1b-4ea0d74397c9.png)
     
 
 ---
 
 ### #. Lebesgue Integral
 
-<img src="mamba_review_img/Untitled%202.png" alt="Lebesgue" width="1000">
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%202.png)
 
 하지만, 이런 문제를 ***Lebegue Integral***로 해결할 수 있다.
 
-<img src="mamba_review_img/Untitled%203.png" alt="Lebegue Integral" width="1000">
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%203.png)
 
 1. 기존의 Riemann 적분처럼 $x$축으로 구간을 나누는게 아닌 $y$축으로 구간을 나눈 후 
 2. 각 $y$축 값에 해당하는 $x$축 값의 집합을 measure $\mu$로 정의해서 적분을 한다.
 
-<img src="mamba_review_img/Untitled%204.png" alt="Lebegue Integral-1" width="1000">
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%204.png)
 
 ⇒ HiPPO논문에서는 time-domain에서의 Measure를 $\mu^{(t)}$로 표현하고 이는 시간축에 따라서 $\mu^{(t)}$ 값이 클수록 Lebesgue Integral에서 중요한 값으로 해석가능하다.
 
@@ -185,13 +69,13 @@
 
 ### # Densities
 
-<img src="mamba_review_img/Untitled%205.png" width="1000">
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%205.png)
 
 ---
 
 ### State Space Model
 
-![제어공학에서 다루는 SSM](mamba_review_img/Untitled%206.png)
+![제어공학에서 다루는 SSM](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%206.png)
 
 제어공학에서 다루는 SSM
 
@@ -208,21 +92,21 @@ In Sequence-to-Sequence Mapping
 - $\dot{x}(t) = \mathbf{A}x(t) + \mathbf{B}u(t)$ ⇒ Encoder로 해석 가능
 - $y(t) = \mathbf{C}x(t) + \mathbf{D}u(t)$ ⇒ Decoder로 해석 가능
 
-<img src="mamba_review_img/Untitled%207.png" width="1000">
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%207.png)
 
 ### # ODE Solver (Neural ODEs)
 
-![Untitled](mamba_review_img/Untitled%208.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%208.png)
 
 ***In Residual Network***
 
-![Untitled](mamba_review_img/Untitled%209.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%209.png)
 
 $x_{k+1} = x_k + f(x_k)$
 
 ***In ODE Network***
 
-![Untitled](mamba_review_img/Untitled%2010.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2010.png)
 
 $\dfrac{d}{dt}x = f(x)$
 
@@ -315,7 +199,7 @@ $\dfrac{d}{dt}x = f(x)$
             
             - $y_{odd}(x) = x  - \dfrac{(n-1)(n+2)}{3!}x^3 + \dfrac{(n-3)(n-1)(n+2)(n+4)}{5!}x^5 - \dfrac{(n-5)(n-3)(n-1)(n+2)(n+4)(n+6)}{7!}x^7 + \cdots$
             
-            ![Untitled](mamba_review_img/bcb7dc0b-676a-42f4-a285-923400a77cfb.png)
+            ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/bcb7dc0b-676a-42f4-a285-923400a77cfb.png)
             
             $n$의 even이면 $y_{even}(x)$가 polynomial이 되고 $y_{odd}(x)$가 series가 된다.
             
@@ -340,7 +224,7 @@ $\dfrac{d}{dt}x = f(x)$
         
         [르장드르 다항식](https://ko.wikipedia.org/wiki/르장드르_다항식)
         
-        ![Untitled](mamba_review_img/Untitled%2011.png)
+        ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2011.png)
         
 
 ---
@@ -349,7 +233,7 @@ $\dfrac{d}{dt}x = f(x)$
 
 - 같은 문장에 대한 Speech Data(Continuous Signal)와 Text data와 비교할 때, Speech Data가 처리할 데이터가 훨씬 많은 것처럼
 
-![unnamed.gif](mamba_review_img/unnamed.gif)
+![unnamed.gif](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/unnamed.gif)
 
 [WaveNet: A generative model for raw audio](https://deepmind.google/discover/blog/wavenet-a-generative-model-for-raw-audio/)
 
@@ -363,19 +247,19 @@ $\dfrac{d}{dt}x = f(x)$
 
 # HiPPO Framework(General Form)
 
-![Untitled](mamba_review_img/Untitled%2012.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2012.png)
 
-![Untitled](mamba_review_img/Untitled%2013.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2013.png)
 
 ### HiPPO의 1차 목적 :
 
 Step 1. $t$ 시점까지의 축적된 함수 $f_{x \leq t}$를 주어진 measure $\mu^{(t)}$에 대해서 가장 잘 근사화(오차가 적은)하는 최적의 근사화된 함수 $g^{(t)}$ 를 구하는 것
 
-![Untitled](mamba_review_img/Untitled%2014.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2014.png)
 
 Step 2. 이때의 $g^{(t)}$의 coefficient $c_n(t)$를 구하는 것 ($c(t) := \text{memory vector}$)
 
-![Untitled](mamba_review_img/Untitled%2015.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2015.png)
 
 ### $\therefore$  $g^{(t)}$를 구성하는 $\text{coefficient }c_n(t)$ 와 $\text{orthogonal basis }g_n^{(t)}$를 구해야한다.
 
@@ -400,7 +284,7 @@ Step 2. 이때의 $g^{(t)}$의 coefficient $c_n(t)$를 구하는 것 ($c(t) := \
 - $\chi$ : OPs를 사용하지 않는 경우(Laguerre, Chebyshev)에 대해 수식화하기 위해 만든 tilting function
     - $\chi$를 적용해서 tilting된 예시
     
-    ![Untitled](mamba_review_img/Untitled%2016.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2016.png)
     
     1. $p_n(x)$ : 기존 Orthogonal Polynomials(OPs)
     2. $\bar{p}_n(x) = p_n(x) \chi(x)$ : 기존 OPs에서 tilting function이 곱해져서 나온 tilted fuction(가정)
@@ -453,7 +337,7 @@ $g_n^{(t)}$는 이제
 
 이제, 직관적으로 $f_{\leq t}$와 $g_n^{(t)}$의 Inner Product로 $f_{\leq t}$가 $g_n^{(t)}$에 Projection되었을 때의 coefficient $c_n(t)$를 구할 수 있다. 
 
-![이해를 위해서 일반적인 Vector형태로 보여주는 예시](mamba_review_img/Untitled%2017.png)
+![이해를 위해서 일반적인 Vector형태로 보여주는 예시](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2017.png)
 
 이해를 위해서 일반적인 Vector형태로 보여주는 예시
 
@@ -471,9 +355,9 @@ $g_n^{(t)}$는 이제
 
 # HiPPO-LegS : Scaled Measures for Timescale Robustness (이후에 논문들에 사용되는 HiPPO식)
 
-![Untitled](mamba_review_img/Untitled%2018.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2018.png)
 
-![Untitled](mamba_review_img/Untitled%2019.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2019.png)
 
 - 함수를 입력받을 때, Sliding Window가 일반적이지만 Memory의 forgetting을 방지하기 위해 Window를 Scaling하는 방식으로 접근한 방식
 
@@ -538,14 +422,14 @@ Basis : 주어진 함수 공간 내에서 orthogonality과 normalization를 유�
         - 제어공학에서는 물리적으로 $\mathbf{D}$가 보통은 0이기 때문에 생략 가능
         - State Variable $x$의 정의에 의해 System이나 Response을 충분히 표현가능해야 하기 때문에 output $y$에 대해서 $\mathbf{C}x(t)$로 충분히 표현가능해야 하기 때문에 $\mathbf{D}$ 생략
     
-    ![제어공학에서 다루는 SSM](mamba_review_img/Untitled%206.png)
+    ![제어공학에서 다루는 SSM](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%206.png)
     
     제어공학에서 다루는 SSM
     
     이후, continuous time에서 활용되는 SSM을 ML에서 사용하기 위해서 주로 사용되는 Discrete-time (language, DNA 등에 맞춰)으로 변환해야 한다. 
     
 
-![Untitled](mamba_review_img/Untitled%2020.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2020.png)
 
 위 식과 같이 전개하고 정리하면,
 
@@ -564,29 +448,29 @@ State Space Model의 A, B Matrix를 구할 수 있다.
 
 [data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAQAAAAngNWGAAABDUlEQVR4AYXRgUZDYRjH4TegFTKgpEqiFJgoWAoMEQGBgBboChaaAKxLKAhAhQqAdAmpBIQolkCFqp2nITvNKXuA7+/Hhzey5OWjE4Nq3rzY1f9/NGHPB549492+8Ww060iCS2XdctZdI3GsECmb+HJoIX6x6EgDm+lURTH+YB7V9nAqE5WNme4YKuOiY6iMe6PaQxUUIuTbswgFVNJwA8sO3Bn6yR6bWZMSNtJwDtuWfHpQxaPx9C9zadil7jrCigbq6UXceNIVKTWUIqypm2ytJdTiNyNeXclF6GttOVfeDEc7qzjR23r3OMFqZKng1kw0mXGLrfibHTScOZWgGv9TdC6ROFeMTgwYiIxvJzMRWQbeGZUAAAAASUVORK5CYII=](data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAQAAAAngNWGAAABDUlEQVR4AYXRgUZDYRjH4TegFTKgpEqiFJgoWAoMEQGBgBboChaaAKxLKAhAhQqAdAmpBIQolkCFqp2nITvNKXuA7+/Hhzey5OWjE4Nq3rzY1f9/NGHPB549492+8Ww060iCS2XdctZdI3GsECmb+HJoIX6x6EgDm+lURTH+YB7V9nAqE5WNme4YKuOiY6iMe6PaQxUUIuTbswgFVNJwA8sO3Bn6yR6bWZMSNtJwDtuWfHpQxaPx9C9zadil7jrCigbq6UXceNIVKTWUIqypm2ytJdTiNyNeXclF6GttOVfeDEc7qzjR23r3OMFqZKng1kw0mXGLrfibHTScOZWgGv9TdC6ROFeMTgwYiIxvJzMRWQbeGZUAAAAASUVORK5CYII=)
 
-![Untitled](mamba_review_img/Untitled%2021.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2021.png)
 
 - **generalized bilinear transform (GBT)**
     
-    ![Untitled](mamba_review_img/Untitled%2022.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2022.png)
     
     - step size $\Delta t$가 주어졌을때,
     - forward Euler corresponds to α = 0, backward Euler to α = 1, and bilinear to α = 1/2
 
-![Untitled](mamba_review_img/Untitled%2023.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2023.png)
 
 # LSSL(The Linear State Space Layer)
 
-![Untitled](mamba_review_img/Untitled%2024.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2024.png)
 
 ### #1. Continuous-time
 
 - Spectrum of Sequence Data
     
-    ![Untitled](mamba_review_img/Untitled%2025.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2025.png)
     
 
-![Untitled](mamba_review_img/Untitled%2026.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2026.png)
 
 - Neural ODEs에서 나온 적절한 Step size $\Delta t$ 를 ODE solver로 구하는 것을 적용했다. (처음에는, naive LSSL)
 - 하지만, ODE solver로 구하는 것보다 다양한 초기 값을 $\Delta t$에 준 후, $\Delta t$에 대해서 학습가능한 파라미터로 적용하는 것이 더 효과적인 것이 실험적으로 검증했다. (+ $\Delta t$ 를 다양하게 표현한다는 가정하에, 기존 RNNs의 성능을 보여준다는 이론적 검증에 활용도 함) (⇒ LSSL)
@@ -598,9 +482,9 @@ State Space Model의 A, B Matrix를 구할 수 있다.
 
 - Discrete Method는 GBT
 
-![Untitled](mamba_review_img/Untitled%2027.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2027.png)
 
-![Matrix A로 드는 예시](mamba_review_img/Untitled%2028.png)
+![Matrix A로 드는 예시](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2028.png)
 
 Matrix A로 드는 예시
 
@@ -614,7 +498,7 @@ Each feature $h ∈ [H]$ defines a sequence$(u_t^{(h)})_{t∈[L]}$
 
 ### #2. Recurrent
 
-![Untitled](mamba_review_img/Untitled%2029.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2029.png)
 
 이산화된 SSM은 Linear RNN으로 볼 수 있다.
 
@@ -625,25 +509,25 @@ Each feature $h ∈ [H]$ defines a sequence$(u_t^{(h)})_{t∈[L]}$
 
 기존에 계산된 값($x(t)$)만 가져오면 이전 정보들이 전부 근사화되었으니 Transformer처럼 다시 Sequence Data의 처음부터 계산할 필요없이 빠른 추론이 가능하다.
 
-![D는 생략, $x_{-1} = 0$](mamba_review_img/Untitled%2030.png)
+![D는 생략, $x_{-1} = 0$](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2030.png)
 
 D는 생략, $x_{-1} = 0$
 
-![Untitled](mamba_review_img/Untitled%2022.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2022.png)
 
 IF. $\alpha = A = B = 1, \; N = 1$
 
-![Untitled](mamba_review_img/Untitled%2031.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2031.png)
 
 ### #3. Convolutional
 
-![Untitled](mamba_review_img/Untitled%2032.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2032.png)
 
-![Untitled](mamba_review_img/Untitled%2033.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2033.png)
 
-![Untitled](mamba_review_img/Untitled%2034.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2034.png)
 
-![kernel3.gif](mamba_review_img/kernel3.gif)
+![kernel3.gif](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/kernel3.gif)
 
 $C\bar{B}$에 $\bar{A}$가 $L-1$ 번 곱해지는 Kernel을 구하고 이를 input $u$와 Convolution 연산을 할 수 있게된다. 이는 병렬 연산으로 더 빠른 Traning이 가능해진다. (Convolution 연산은 FFT로 가속화)
 
@@ -678,15 +562,15 @@ $Definition$
 
 - Off-Diagonal Blocks은 모두 Low-Rank이다.
 
-![Untitled](mamba_review_img/Untitled%2035.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2035.png)
 
 따라서, 충분히 Low-Rank로 분해할 수 있는 확장가능성이 있기때문에 이를 알아보려했다.
 
-![Untitled](mamba_review_img/Untitled%2036.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2036.png)
 
-![Untitled](mamba_review_img/Untitled%2037.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2037.png)
 
-![Untitled](mamba_review_img/Untitled%2038.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2038.png)
 
 ### Try 1. Diagonalization
 
@@ -696,29 +580,29 @@ $Definition$
 
 HiPPO Matrix ⇒ Normal Matrix & Low-Rank Matrix로 분해
 
-![Untitled](mamba_review_img/Untitled%2039.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2039.png)
 
-![Untitled](mamba_review_img/Untitled%2040.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2040.png)
 
 $A = \Lambda - PQ^*$ : Woodbury Identity
 
 이후, 
 
-![Untitled](mamba_review_img/Untitled%2041.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2041.png)
 
 이런식으로 변환하면 대각 행렬 요소만 따로 뺄 수 있기 때문에 Diagonal Plus Low-Rank (DPLR)로 변환이 가능하다.
 
-![Untitled](mamba_review_img/Untitled%2042.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2042.png)
 
 $\bar{A}$ 중 ($I+\Delta/2\cdot A$)만 $A = \Lambda - PQ^*$를 대입 후 정리
 
-![Untitled](mamba_review_img/Untitled%2043.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2043.png)
 
 $(I+\Delta/2\cdot A)^{-1}$ 도 같은  식으로 진행
 
-![Untitled](mamba_review_img/Untitled%2044.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2044.png)
 
-![Untitled](mamba_review_img/Untitled%2045.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2045.png)
 
 Woodbury’s Identity의 역행렬
 
@@ -726,11 +610,11 @@ Woodbury’s Identity의 역행렬
 
 최종적인 Discrete SSM
 
-![Untitled](mamba_review_img/Untitled%2046.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2046.png)
 
-![Untitled](mamba_review_img/Untitled%2047.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2047.png)
 
-![Untitled](mamba_review_img/Untitled%2048.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2048.png)
 
 ---
 
@@ -738,7 +622,7 @@ Woodbury’s Identity의 역행렬
 
 SSMs는 Long Sequence Modeling이 고려되어 만들어졌지만 Language 같은 Main Modality에서는 Attention Mechanism만한 성능 X
 
-![Untitled](mamba_review_img/Untitled%2049.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2049.png)
 
 기존 S4 Model(Mamba 논문에서 SSM은 모두 S4 Model을 지칭)에서 바뀐점
 
@@ -746,9 +630,9 @@ SSMs는 Long Sequence Modeling이 고려되어 만들어졌지만 Language 같�
 
  Discretization : GBT → ZOH(Zero-Order Hold)
 
-![Untitled](mamba_review_img/Untitled%2050.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2050.png)
 
-![Untitled](mamba_review_img/Untitled%2051.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2051.png)
 
 한 주기 동안 현재값이 유지되는 Discretization
 
@@ -760,34 +644,34 @@ SSMs는 Long Sequence Modeling이 고려되어 만들어졌지만 Language 같�
 
 ### Selective State Space Models
 
-![Untitled](mamba_review_img/Untitled%2052.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2052.png)
 
 Transformer : No Compressed (Not Efficiency) but Effectiveness
 
 $\text{Effectiveness}  \propto \dfrac{1}{\text{Efficiency(Compressed)}}$
 
-![Untitled](mamba_review_img/Untitled%2053.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2053.png)
 
 ### Problem (intuition)
 
-![Untitled](mamba_review_img/Untitled%2054.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2054.png)
 
 1. Selective Copying Task
     
     : Input의 일부를 Copying 해서 순서대로 출력
     
-    ![Untitled](mamba_review_img/Untitled%2055.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2055.png)
     
 2. Induction Heads Task (related In-Context Learning)
     
     : Input에서의 발견된 Pattern을 재현
     
-    ![Untitled](mamba_review_img/Untitled%2056.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2056.png)
     
 
 ### Solution
 
-![Untitled](mamba_review_img/Untitled%2057.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2057.png)
 
 1. Selective Copying을 하기 위해서는 선택적으로 정보를 택하고 무시하는 과정이 필요하다. 
     
@@ -795,7 +679,7 @@ $\text{Effectiveness}  \propto \dfrac{1}{\text{Efficiency(Compressed)}}$
     
     이를 Gated MLP로 구현
     
-    ![Untitled](mamba_review_img/Untitled%2058.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2058.png)
     
     Variable length (Step size) $\Delta$에 대해 의존적으로 만듦
     
@@ -803,7 +687,7 @@ $\text{Effectiveness}  \propto \dfrac{1}{\text{Efficiency(Compressed)}}$
     
     $\Delta$ → $0$ : 현재 Input 무시
     
-    ![Untitled](mamba_review_img/Untitled%2059.png)
+    ![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2059.png)
     
     $\Delta$ 만큼 Broadcast/Repeating 
     
@@ -813,19 +697,19 @@ H3(Hungry Hungry HiPPO) : SSM을 NLP Domain에 본격적으로 적용함
 1. Linear Attention (Softmax 근사화)
 2. FlashConv (Hardware Modeling)
 
-![Untitled](mamba_review_img/Untitled%2060.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2060.png)
 
-![Untitled](mamba_review_img/Untitled%2061.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2061.png)
 
-![Untitled](mamba_review_img/Untitled%2062.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2062.png)
 
-![Untitled](mamba_review_img/Untitled%2063.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2063.png)
 
-![Untitled](mamba_review_img/Untitled%2064.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2064.png)
 
-![Untitled](mamba_review_img/Untitled%2065.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2065.png)
 
-![Untitled](mamba_review_img/Untitled%2066.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2066.png)
 
 # # 참고.
 
@@ -840,7 +724,7 @@ H3(Hungry Hungry HiPPO) : SSM을 NLP Domain에 본격적으로 적용함
     
 - Function의 $[0, \infin)$ 범위에서의 내적을 고려해야하기 때문에 채택
 
-![Untitled](mamba_review_img/Untitled%2067.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2067.png)
 
 ### #. Approximations of differential equations.
 
@@ -874,15 +758,15 @@ $x_0(t), x_1(t), \cdots$ , 각 $x_n(t)$가 Integral Solution $x(t)$에 근사된
 
 $x(t_{i+1}) = x(t_i) + \displaystyle\int_{t_i}^{t_{i+1}}f(s, x(s))ds$ 혹은 $x(t_{k}) = x(t_{k-1}) + \displaystyle\int_{t_{k-1}}^{t_{k}}f(s, x(s))ds$
 
-![Untitled](mamba_review_img/Untitled%2068.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2068.png)
 
 ---
 
 ---
 
-![Untitled](mamba_review_img/Untitled%2069.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2069.png)
 
-![Untitled](mamba_review_img/Untitled%2070.png)
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2070.png)
 
 $s_B(x) = \text{Linear}_N(x)$
 
@@ -894,16 +778,4 @@ $\tau_\Delta = \text{softplus} = \dfrac{1}{\beta}*\log (1+\exp(\beta*x))$
 
 [Papers with Code - Softplus Explained](https://paperswithcode.com/method/softplus)
 
-![Untitled](mamba_review_img/Untitled%2071.png)
-`;
-
-            // Convert Markdown to HTML using marked function
-            const htmlContent = marked.parse(markdownContent);
-
-            // Insert the converted HTML into the page
-            document.getElementById("markdown-content").innerHTML = htmlContent;
-        });
-    </script>
-</body>
-
-</html>
+![Untitled](Mamba%20Linear-Time%20Sequence%20Modeling%20with%20Selective%203b5d294bedf846e4af6536873c3ccf05/Untitled%2071.png)
