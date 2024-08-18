@@ -20,8 +20,19 @@
     <!-- Marked.js for Markdown parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <!-- MathJax for LaTeX rendering -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
     <style>
-        /* 추가적인 스타일을 여기에 작성할 수 있습니다 */
+        /* 수식을 포함한 모든 내용을 왼쪽 정렬 */
+        .content-container {
+            text-align: left;
+        }
+
+        /* LaTeX 수식을 왼쪽 정렬 */
+        .MathJax_Display {
+            text-align: left !important;
+        }
     </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -57,7 +68,7 @@
     </nav>
 
     <!-- Page Content -->
-    <div class="container">
+    <div class="container content-container">
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="post-title">Mamba: Linear-Time Sequence Modeling with Selective State Spaces</h1>
@@ -191,15 +202,15 @@
 
 ### State Space Model
 
-![제어공학에서 다루는 SSM](mamba_review_img/Untitled%206.png)
+<img src="mamba_review_img/Untitled%206.png" width="1000">
 
 제어공학에서 다루는 SSM
 
-- $\dot{x}(t) = \mathbf{A}x(t) + \mathbf{B}u(t)$
-- $y(t) = \mathbf{C}x(t) + \mathbf{D}u(t)$
-    - input $u(t) \in \mathbb{R}^{1\times L}$
-    - state respresentation $x(t) \in \mathbb{R}^{N \times L}$
-    - output $y(t) \in \mathbb{R}^{1\times L}$
+- $$\\dot{x}(t) = \\mathbf{A}x(t) + \\mathbf{B}u(t)$$
+- $$y(t) = \\mathbf{C}x(t) + \\mathbf{D}u(t)$$
+    - input $$u(t) \\in \\mathbb{R}^{1\\times L}$$
+    - state respresentation $$x(t) \\in \\mathbb{R}^{N \times L}$$
+    - output $$y(t) \\in \\mathbb{R}^{1\\times L}$$
 
 주된 특성으로는 **LTI System**이라는 점이다.
 
@@ -902,6 +913,8 @@ $\tau_\Delta = \text{softplus} = \dfrac{1}{\beta}*\log (1+\exp(\beta*x))$
 
             // Insert the converted HTML into the page
             document.getElementById("markdown-content").innerHTML = htmlContent;
+
+            MathJax.typeset();
         });
     </script>
 </body>
